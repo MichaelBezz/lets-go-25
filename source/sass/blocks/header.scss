@@ -1,12 +1,26 @@
 .header {
-  padding: 28px 0;
-
+  min-width: 320px;
+  background-color: $color-midnight-express;
 
   .container {
     display: flex;
+    align-items: center;
+    padding: 46px 0 8px;
   }
 
   &__logo {
-    color: $color-default-white;
+    flex: 0 0 auto;
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__navigation {
+    margin-right: auto;
+  }
+
+  &__socials {
+    display: none;
   }
 }
