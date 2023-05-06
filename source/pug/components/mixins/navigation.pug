@@ -1,0 +1,27 @@
+mixin navigation(currentUrl)
+  -
+    const navigationLinks = [
+      {
+        href: "#",
+        text: "О сервисе"
+      },
+      {
+        href: "#",
+        text: "Направления"
+      },
+      {
+        href: "#",
+        text: "Попутчики"
+      }
+    ]
+
+  .navigation&attributes(attributes)
+    ul.navigation__list
+      each link in navigationLinks
+        - const {href, text} = link
+        - const activeState = currentUrl === link.href
+        li.navigation__item
+          if(activeState)
+            span.navigation__link.is-active=text
+          else
+            +link({href: href, text: text}).link--big.link--uppercase.link--white.navigation__link

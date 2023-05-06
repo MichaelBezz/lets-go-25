@@ -1,4 +1,6 @@
 mixin header(headerMods, currentUrl)
   header.header(class=headerMods)
     .container
-      +logo(currentUrl)
+      +logo(currentUrl).header__logo
+      +button(aria-label="Переключатель отображения меню.", aria-pressed="false").header__toggle
+      +navigation(currentUrl).header__navigation
