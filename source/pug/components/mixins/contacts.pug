@@ -1,0 +1,22 @@
+mixin contacts()
+  -
+    const contactLinks = [
+      {
+        href: "tel:+78005556677",
+        text: "8(800)555-66-77",
+        icon: 'call-icon'
+      },
+      {
+        href: "mailto:example@mail.ru",
+        text: "example@mail.ru",
+        icon: 'mail-icon'
+      }
+    ]
+
+  .contacts&attributes(attributes)
+    ul.contacts__list
+      each link in contactLinks
+        - const {href, text, icon} = link
+        li.contacts__item
+          +link({href: href})(aria-label=text).contacts__link
+            +icon(icon, 18, 18)
