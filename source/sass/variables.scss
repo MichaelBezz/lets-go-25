@@ -10,8 +10,13 @@ $color-transparent:                 rgba(255, 255, 255, 0);
 // Project palette
 // для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
 
-$color-neon-blue:                   #2c39f2;
-$color-torch-red:                   #ff1553;
+$color-catalina-blue:               #1d2e5b;
+$color-midnight-express:            #161c35;
+$color-energy-yellow:               #ffd74b;
+$color-supernova:                   #ffbd30;
+$color-lightning-yellow:            #ffa530;
+$color-neon-carrot:                 #ff8d30;
+$color-burnt-orange:                #f26926;
 
 // Gradient
 
@@ -20,14 +25,31 @@ $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0
 // Typography
 // ---------------------------------
 
-// переменная используемая в html для подключения скейлинга
+$ff-blogger-sans:                   "Blogger Sans", "Arial", sans-serif;
+
 $fz-default:                        16px;
+$lh-default:                        1.5;
 
-// у некоторых шрифтов в ios возникают проблемы с символом рубля
-// https://www.artlebedev.ru/kovodstvo/sections/159/#13
-$ff-rouble:                         "Rouble", "Arial", sans-serif;
+$font-size-60:                      60px;
+$font-size-45:                      45px;
+$font-size-36:                      36px;
+$font-size-28:                      28px;
+$font-size-24:                      24px;
+$font-size-21:                      21px;
+$font-size-20:                      20px;
 
-$ff-placeholder:                    "Placeholder", "Arial", sans-serif;
+$line-height-70:                    70px;
+$line-height-45:                    45px;
+$line-height-40:                    40px;
+$line-height-32:                    32px;
+$line-height-24:                    24px;
+$line-height-21:                    21px;
+$line-height-20:                    20px;
+
+$font-weight-bold:                   700;
+$font-weight-medium:                 500;
+$font-weight-normal:                 400;
+$font-weight-light:                  300;
 
 // Animation
 // ---------------------------------
