@@ -1,0 +1,15 @@
+.link {
+  &--big {
+    font-size: $font-size-20;
+    line-height: calc($line-height-20 / $font-size-20);
+    font-weight: $font-weight-medium;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--white {
+    color: $color-default-white;
+  }
+}
