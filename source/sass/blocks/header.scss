@@ -5,11 +5,16 @@
   .container {
     display: flex;
     align-items: center;
-    padding: 46px 30px 8px;
+    padding: 49px 30px 8px;
+
+    @include vp-1439 {
+      padding: 49px 20px 8px;
+    }
   }
 
   &__logo {
     flex: 0 0 auto;
+    margin-top: -4px;
   }
 
   &__toggle {
@@ -22,5 +27,9 @@
 
   &__socials {
     display: none;
+  }
+
+  &__login {
+    min-width: 188px;
   }
 }

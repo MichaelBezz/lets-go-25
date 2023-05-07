@@ -5,3 +5,4 @@ mixin header(headerMods, currentUrl)
       +button(aria-label="Переключатель отображения меню.", aria-pressed="false").header__toggle
       +navigation(currentUrl).header__navigation
       +contacts().header__contacts
+      +button({href: "#", text: "Авторизация"}).button--small.button--uppercase.header__login
