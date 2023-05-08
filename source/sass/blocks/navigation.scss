@@ -12,6 +12,14 @@
     background-color: $color-default-white;
   }
 
+  @include vp-1279 {
+    padding: 0 58px;
+
+    &::before {
+      content: unset;
+    }
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -20,10 +28,23 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include vp-1279 {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
   }
 
   &__link {
     display: block;
     padding: 12px 0;
+
+    @include vp-1279 {
+      padding: 0;
+    }
   }
 }
