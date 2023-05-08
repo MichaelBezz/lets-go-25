@@ -1,20 +1,4 @@
-mixin contacts()
-  -
-    const contactLinks = [
-      {
-        href: "tel:+78005558628",
-        text: "8 800 555-86-28",
-        iconSmall: 'call-small',
-        iconFull: 'call-full'
-      },
-      {
-        href: "mailto:mail@htmlacademy.ru",
-        text: "mail@htmlacademy.ru",
-        iconSmall: 'mail-small',
-        iconFull: 'mail-full'
-      }
-    ]
-
+mixin contacts(contactLinks)
   .contacts&attributes(attributes)
     ul.contacts__list
       each link in contactLinks

@@ -1,8 +1,58 @@
 mixin header(headerMods, currentUrl)
+  -
+    const navigationLinks = [
+      {
+        href: "#",
+        text: "О сервисе"
+      },
+      {
+        href: "#",
+        text: "Направления"
+      },
+      {
+        href: "#",
+        text: "Попутчики"
+      }
+    ]
+  -
+    const contactLinks = [
+      {
+        href: "tel:+78005558628",
+        text: "8 800 555-86-28",
+        iconSmall: 'call-small',
+        iconFull: 'call-full'
+      },
+      {
+        href: "mailto:mail@htmlacademy.ru",
+        text: "mail@htmlacademy.ru",
+        iconSmall: 'mail-small',
+        iconFull: 'mail-full'
+      }
+    ]
+  -
+    const socialLinks = [
+      {
+        href: "#",
+        text: "Telegram",
+        icon: "telegram"
+      },
+      {
+        href: "#",
+        text: "VKontakte",
+        icon: "vkontakte"
+      },
+      {
+        href: "#",
+        text: "YouTube",
+        icon: "youtube"
+      }
+    ]
+
   header.header(class=headerMods)
     .container
       +logo(currentUrl).header__logo
-      +button(aria-label="Переключатель отображения меню.", aria-pressed="false").header__toggle
-      +navigation(currentUrl).header__navigation
-      +contacts().header__contacts
-      +button({href: "#", text: "Авторизация"}).button--small.button--uppercase.header__login
+      +button(aria-label="Переключатель отображения меню.", aria-pressed="false").button--toggle.header__toggle
+      +navigation(navigationLinks, currentUrl).header__navigation
+      +contacts(contactLinks).header__contacts
+      +button({href: "#", text: "Авторизация"}).button--small.header__login
+      +socials(socialLinks).header__socials

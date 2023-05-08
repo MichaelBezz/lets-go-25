@@ -1,20 +1,4 @@
-mixin navigation(currentUrl)
-  -
-    const navigationLinks = [
-      {
-        href: "#",
-        text: "О сервисе"
-      },
-      {
-        href: "#",
-        text: "Направления"
-      },
-      {
-        href: "#",
-        text: "Попутчики"
-      }
-    ]
-
+mixin navigation(navigationLinks, currentUrl)
   .navigation&attributes(attributes)
     ul.navigation__list
       each link in navigationLinks

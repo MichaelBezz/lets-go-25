@@ -1,8 +1,4 @@
 .contacts {
-  @include vp-1279 {
-    padding: 0 58px;
-  }
-
   &__list {
     display: flex;
     flex-wrap: wrap;

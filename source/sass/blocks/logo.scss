@@ -4,7 +4,11 @@
   height: 50px;
   color: $color-default-white;
 
-  @include vp-1439 {
+  .is-open & {
+    color: $color-midnight-dark;
+  }
+
+  @include vp-1279 {
     width: 166px;
     height: 42px;
   }
