@@ -1,0 +1,21 @@
+.socials {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 45px);
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: flex;
+    width: 45px;
+    height: 45px;
+    color: $color-midnight-dark;
+
+    svg {
+      margin: auto;
+    }
+  }
+}

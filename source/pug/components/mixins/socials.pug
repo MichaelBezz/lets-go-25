@@ -1,0 +1,8 @@
+mixin socials(socialLinks)
+  .socials&attributes(attributes)
+    ul.socials__list
+      each link in socialLinks
+        - const {href, text, icon} = link
+        li.socials__item
+          +link({href: href})(aria-label=text).socials__link
+            +icon(icon, 24, 24)
