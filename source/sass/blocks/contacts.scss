@@ -1,54 +1,119 @@
 .contacts {
+  @include vp-1279 {
+    padding: 0 58px;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 0;
     margin: 0;
     padding: 0;
     list-style: none;
-  }
 
-  &__item {
-    border-radius: 50%;
-    transition: background-color $trans-default;
-
-    &:nth-of-type(even) {
-      background-color: $color-supernova;
-    }
-
-    &:nth-of-type(odd) {
-      background-color: $color-neon-carrot;
-    }
-
-    @include hover {
-      &:nth-of-type(even) {
-        background-color: $color-neon-carrot;
-      }
-
-      &:nth-of-type(odd) {
-        background-color: $color-burnt-orange;
-      }
-    }
-
-    &:focus-within {
-      &:nth-of-type(even) {
-        background-color: $color-neon-carrot;
-      }
-
-      &:nth-of-type(odd) {
-        background-color: $color-burnt-orange;
-      }
+    @include vp-1279 {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
   &__link {
     display: flex;
+    align-items: center;
+    gap: 23px;
+  }
+
+  &__icon-wrapper {
+    display: flex;
     width: 50px;
     height: 50px;
+    border-radius: 50%;
+    transition: background-color $trans-default;
+
+    @include vp-1279 {
+      width: 68px;
+      height: 68px;
+    }
+  }
+
+  &__item:nth-of-type(odd) &__icon-wrapper {
+    background-color: $color-neon-carrot;
+
+    @include hover {
+      background-color: $color-burnt-orange;
+    }
+
+    @include vp-1279 {
+      background-color: $color-midnight-dark;
+
+      @include hover {
+        background-color: $color-midnight-dark;
+      }
+    }
+  }
+
+  &__item:nth-of-type(odd) &__link:focus-visible &__icon-wrapper {
+    background-color: $color-burnt-orange;
+
+    @include vp-1279 {
+      background-color: $color-midnight-dark;
+    }
+  }
+
+  &__item:nth-of-type(even) &__icon-wrapper {
+    background-color: $color-supernova;
+
+    @include hover {
+      background-color: $color-neon-carrot;
+    }
+
+    @include vp-1279 {
+      background-color: $color-midnight-dark;
+
+      @include hover {
+        background-color: $color-midnight-dark;
+      }
+    }
+  }
+
+  &__item:nth-of-type(even) &__link:focus-visible &__icon-wrapper {
+    background-color: $color-neon-carrot;
+
+    @include vp-1279 {
+      background-color: $color-midnight-dark;
+    }
+  }
+
+  &__icon {
+    margin: auto;
     color: $color-midnight-express;
 
-    svg {
-      margin: auto;
+    &--full {
+      display: none;
+    }
+
+    @include vp-1279 {
+      color: $color-energy-yellow;
+
+      &--small {
+        display: none;
+      }
+
+      &--full {
+        display: block;
+      }
+    }
+  }
+
+  &__icon-text {
+    display: none;
+
+    @include vp-1279 {
+      display: block;
+      font-size: $font-size-28;
+      line-height: calc($line-height-28 / $font-size-28);
+      font-weight: $font-weight-bold;
+      text-transform: uppercase;
+      color: $color-midnight-dark;
     }
   }
 }

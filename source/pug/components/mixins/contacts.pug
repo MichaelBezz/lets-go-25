@@ -2,21 +2,26 @@ mixin contacts()
   -
     const contactLinks = [
       {
-        href: "tel:+78005556677",
-        text: "8(800)555-66-77",
-        icon: 'call-icon'
+        href: "tel:+78005558628",
+        text: "8 800 555-86-28",
+        iconSmall: 'call-small',
+        iconFull: 'call-full'
       },
       {
-        href: "mailto:example@mail.ru",
-        text: "example@mail.ru",
-        icon: 'mail-icon'
+        href: "mailto:mail@htmlacademy.ru",
+        text: "mail@htmlacademy.ru",
+        iconSmall: 'mail-small',
+        iconFull: 'mail-full'
       }
     ]
 
   .contacts&attributes(attributes)
     ul.contacts__list
       each link in contactLinks
-        - const {href, text, icon} = link
+        - const {href, text, iconSmall, iconFull} = link
         li.contacts__item
           +link({href: href})(aria-label=text).contacts__link
-            +icon(icon, 18, 18)
+            span.contacts__icon-wrapper
+              +icon(iconSmall, 18, 18).contacts__icon.contacts__icon--small
+              +icon(iconFull, 28, 28).contacts__icon.contacts__icon--full
+            span.contacts__icon-text=text
