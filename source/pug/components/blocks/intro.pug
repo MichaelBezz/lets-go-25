@@ -1,10 +1,17 @@
 mixin intro()
-  .intro
-    //- вставлять блоки во внешний контейнер неверно
-    //- все блоки содержат в себе container без доп класса tutorial__wrapper
-    .container
-      p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
+  -
+    const steps = [
+      'Выберите направление',
+      'Изучите идеи путешественников',
+      'Находите тех, кто похож на&nbsp;вас',
+      'Путешествуйте вместе!'
+    ]
 
-      p(style="margin-top: 40px;") Пример использования +img()
-      p(style="margin-bottom: 40px;")
-        +img("content", "placeholder", "png", 120, 120, "Пример")
+  .intro
+    .container
+      +title({tag: "h1", text: "В&nbsp;путешествие с&nbsp;крутыми попутчиками!"}).title--h1.title--white.intro__title
+      .intro__image
+        +img("content", "intro-traveler", "png", 430, 640, "Путешественник с чемоданом.")
+      blockquote.intro__quote «Лучшее приложение, что я&nbsp;видел в&nbsp;жизни!»
+        cite Мурат Эльтазин #[br] главный редактор газеты &laquo;гаджетлайф&raquo;
+      +steps(steps).intro__steps
