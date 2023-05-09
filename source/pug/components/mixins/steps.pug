@@ -1,0 +1,8 @@
+mixin steps (steps)
+  .steps&attributes(attributes)
+    ul.steps__list
+      each step, index in steps
+        - const stepNumber = index + 1
+        li.steps__item
+          span.steps__text!=step
+          span.steps__number=stepNumber
