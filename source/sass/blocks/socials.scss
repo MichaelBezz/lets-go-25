@@ -6,6 +6,11 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include vp-767 {
+      justify-content: center;
+      gap: 0;
+    }
   }
 
   &__link {

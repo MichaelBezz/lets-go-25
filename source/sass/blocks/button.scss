@@ -28,7 +28,14 @@
     line-height: calc($line-height-20 / $font-size-20);
     font-weight: $font-weight-bold;
     text-transform: uppercase;
+    text-align: center;
     border-radius: 25px;
+
+    @include vp-767 {
+      padding: 12px 12px 8px;
+      font-size: $font-size-17;
+      line-height: calc($line-height-30 / $font-size-17);
+    }
   }
 
   &--toggle {
@@ -36,6 +43,10 @@
     height: 50px;
     background-color: $color-transparent;
     transition: transform $trans-default;
+
+    @include hover-focus {
+      background-color: $color-transparent;
+    }
 
     &::before,
     &::after {
@@ -49,16 +60,25 @@
       transform: translateX(-50%);
     }
 
-    @include hover-focus {
-      background-color: $color-transparent;
-    }
-
     &::before {
       top: 20px;
     }
 
     &::after {
       top: 28px;
+    }
+
+    @include vp-767 {
+      width: 26px;
+      height: 20px;
+
+      &::before {
+        top: 10px;
+      }
+
+      &::after {
+        top: 18px;
+      }
     }
 
     .is-open & {
@@ -74,6 +94,11 @@
 
       &::after {
         transform: translateX(-50%) translateY(-4px) rotate(-46deg);
+      }
+
+      @include vp-767 {
+        width: 24px;
+        height: 22px;
       }
     }
   }

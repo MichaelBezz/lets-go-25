@@ -2,6 +2,26 @@
   min-width: 320px;
   background-color: $color-midnight-express;
 
+  .container {
+    display: grid;
+    grid-template-areas: "h-logo h-nav h-contacts h-login";
+    grid-template-columns: 200px 1fr minmax(100px, 200px) 188px;
+    align-items: center;
+    padding: 49px 30px 8px;
+
+    @include vp-1279 {
+      grid-template-areas: "h-logo h-toggle h-login";
+      grid-template-columns: 188px 1fr 188px;
+      padding: 40px;
+    }
+
+    @include vp-767 {
+      grid-template-areas: "h-logo h-toggle";
+      grid-template-columns: 96px 1fr;
+      padding: 18px 25px;
+    }
+  }
+
   &.is-open {
     @include vp-1279 {
       background-color: $color-default-white;
@@ -15,19 +35,17 @@
         padding-bottom: 80px;
       }
     }
-  }
 
-  .container {
-    display: grid;
-    grid-template-areas: "h-logo h-nav h-contacts h-login";
-    grid-template-columns: 200px 1fr minmax(100px, 200px) 188px;
-    align-items: center;
-    padding: 49px 30px 8px;
-
-    @include vp-1279 {
-      grid-template-areas: "h-logo h-toggle h-login";
-      grid-template-columns: 188px 1fr 188px;
-      padding: 40px;
+    @include vp-767 {
+      .container {
+        grid-template-areas:
+          "h-logo     h-toggle  "
+          "h-nav      h-nav     "
+          "h-login    h-login   "
+          "h-contacts h-contacts"
+          "h-socials  h-socials ";
+        padding: 26px 25px;
+      }
     }
   }
 
@@ -48,6 +66,15 @@
       justify-self: center;
       display: flex;
     }
+
+    @include vp-767 {
+      justify-self: end;
+      margin-top: -5px;
+
+      .is-open & {
+        margin-top: -8px;
+      }
+    }
   }
 
   &__navigation {
@@ -62,6 +89,13 @@
         display: block;
         margin-top: 88px;
         padding: 0 58px;
+      }
+    }
+
+    @include vp-767 {
+      .is-open & {
+        margin-top: 72px;
+        padding: 0;
       }
     }
   }
@@ -80,10 +114,26 @@
         padding: 0 58px;
       }
     }
+
+    @include vp-767 {
+      .is-open & {
+        margin-top: 51px;
+        padding: 0;
+      }
+    }
   }
 
   &__login {
     grid-area: h-login;
+
+    @include vp-767 {
+      display: none;
+
+      .is-open & {
+        display: block;
+        margin-top: 54px;
+      }
+    }
   }
 
   &__socials {
@@ -95,6 +145,13 @@
         display: block;
         margin-top: 122px;
         padding: 0 64px;
+      }
+    }
+
+    @include vp-767 {
+      .is-open & {
+        margin-top: 30px;
+        padding: 0;
       }
     }
   }
