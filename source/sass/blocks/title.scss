@@ -1,0 +1,39 @@
+.title {
+  margin: 0;
+  font-style: normal;
+  font-weight: $font-weight-bold;
+
+  &--h3 {
+    font-size: $font-size-24;
+    line-height: calc($line-height-24 / $font-size-24);
+
+    @include vp-767 {
+      font-size: $font-size-21;
+      line-height: calc($line-height-21 / $font-size-21);
+    }
+  }
+
+  &--h2 {
+    font-size: $font-size-45;
+    line-height: calc($line-height-45 / $font-size-45);
+
+    @include vp-767 {
+      font-size: $font-size-24;
+      line-height: calc($line-height-24 / $font-size-24);
+    }
+  }
+
+  &--h1 {
+    font-size: $font-size-60;
+    line-height: calc($line-height-70 / $font-size-60);
+
+    @include vp-767 {
+      font-size: $font-size-36;
+      line-height: calc($line-height-40 / $font-size-36);
+    }
+  }
+
+  &--white {
+    color: $color-default-white;
+  }
+}
