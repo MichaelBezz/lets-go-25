@@ -8,6 +8,8 @@ mixin intro()
     ]
 
   .intro
+    .intro__background
+      +img("content", "intro-bg", "png", 1440, 640, "Фон для блока intro.")
     .container
       +title({tag: "h1", text: "В&nbsp;путешествие с&nbsp;крутыми попутчиками!"}).title--h1.title--white.intro__title
       .intro__image
