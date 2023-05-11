@@ -1945,15 +1945,36 @@ button,
 }
 
 .intro {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "intro";
   min-width: 320px;
   background-color: #161c35;
-  background-image: url("../img/content/intro-bg.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
+}
+
+.intro__background {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: intro;
+  max-width: 1440px;
+  overflow: hidden;
+}
+
+.intro__background img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center bottom;
+  object-position: center bottom;
 }
 
 .intro .container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: intro;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 36px auto 36px minmax(auto, 310px);
@@ -1981,6 +2002,8 @@ button,
   -ms-grid-row-span: 2;
   -ms-grid-column: 3;
   grid-area: i-img;
+  -ms-grid-row-align: end;
+  align-self: end;
   aspect-ratio: 430/640;
   overflow: hidden;
 }
@@ -2025,6 +2048,7 @@ button,
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+  margin-top: -38px;
 }
 
 .steps__list {
@@ -2325,6 +2349,69 @@ button,
     font-weight: 700;
     text-transform: uppercase;
     color: #192144;
+  }
+
+  .intro {
+    padding-bottom: 140px;
+  }
+
+  .intro .container {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto 0 auto 0 auto;
+    grid-template-areas: "i-title i-title" "i-quote i-img  " "i-steps i-img  ";
+    gap: 0;
+  }
+
+  .intro__title {
+    -ms-grid-column-align: center;
+    justify-self: center;
+    max-width: 96%;
+    margin-top: 26px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .intro__image {
+    margin-top: 36px;
+  }
+
+  .intro__quote {
+    grid-column: 1/-1;
+    max-width: 50%;
+    margin-top: 92px;
+    padding: 0 32px;
+  }
+
+  .intro__steps {
+    grid-area: i-steps;
+    grid-column: 1/-1;
+    -ms-grid-row-align: end;
+    align-self: end;
+    margin: 0;
+    margin-bottom: -96px;
+  }
+
+  .intro__title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+  }
+
+  .intro__image {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 3;
+  }
+
+  .intro__quote {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+
+  .intro__steps {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
   }
 }
 
