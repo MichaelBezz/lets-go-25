@@ -40,6 +40,14 @@
         "i-steps i-img  ";
       gap: 0;
     }
+
+    @include vp-767 {
+      grid-template-areas:
+        "i-title"
+        "i-img  "
+        "i-quote"
+        "i-steps";
+    }
   }
 
   &__title {
@@ -71,6 +79,7 @@
 
     @include vp-1279 {
       margin-top: 36px;
+      margin-right: 20px;
     }
   }
 
@@ -112,7 +121,7 @@
       grid-column: 1 / -1;
       align-self: end;
       margin: 0;
-      margin-bottom: -96px;
+      margin-bottom: -92px;
     }
   }
 }
