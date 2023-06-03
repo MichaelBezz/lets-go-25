@@ -48,10 +48,10 @@ mixin header(headerMods, currentUrl)
       }
     ]
 
-  header.header(class=headerMods)
+  header.header(class=headerMods, data-menu="header")
     .container
       +logo(currentUrl).header__logo
-      +button(aria-label="Переключатель отображения меню.", aria-pressed="false").button--toggle.header__toggle
+      +button(aria-label="Переключатель отображения меню.", aria-pressed="false", data-menu="toggle").button--toggle.header__toggle
       +navigation(navigationLinks, currentUrl).header__navigation
       +contacts(contactLinks).header__contacts
       +button({href: "#", text: "Авторизация"}).button--small.header__login
