@@ -22,33 +22,6 @@
     }
   }
 
-  &.is-open {
-    @include vp-1279 {
-      background-color: $color-default-white;
-
-      .container {
-        grid-template-areas:
-          "h-logo     h-toggle   h-login   "
-          "h-nav      h-nav      h-nav     "
-          "h-contacts h-contacts h-contacts"
-          "h-socials  h-socials  h-socials ";
-        padding-bottom: 80px;
-      }
-    }
-
-    @include vp-767 {
-      .container {
-        grid-template-areas:
-          "h-logo     h-toggle  "
-          "h-nav      h-nav     "
-          "h-login    h-login   "
-          "h-contacts h-contacts"
-          "h-socials  h-socials ";
-        padding: 26px 25px;
-      }
-    }
-  }
-
   &__logo {
     grid-area: h-logo;
     margin-top: -4px;
@@ -70,10 +43,6 @@
     @include vp-767 {
       justify-self: end;
       margin-top: -5px;
-
-      .is-open & {
-        margin-top: -8px;
-      }
     }
   }
 
@@ -84,19 +53,6 @@
     @include vp-1279 {
       display: none;
       margin-right: 0;
-
-      .is-open & {
-        display: block;
-        margin-top: 88px;
-        padding: 0 58px;
-      }
-    }
-
-    @include vp-767 {
-      .is-open & {
-        margin-top: 72px;
-        padding: 0;
-      }
     }
   }
 
@@ -107,19 +63,6 @@
     @include vp-1279 {
       display: none;
       justify-self: unset;
-
-      .is-open & {
-        display: block;
-        margin-top: 136px;
-        padding: 0 58px;
-      }
-    }
-
-    @include vp-767 {
-      .is-open & {
-        margin-top: 51px;
-        padding: 0;
-      }
     }
   }
 
@@ -128,28 +71,89 @@
 
     @include vp-767 {
       display: none;
-
-      .is-open & {
-        display: block;
-        margin-top: 54px;
-      }
     }
   }
 
   &__socials {
     grid-area: h-socials;
     display: none;
+  }
 
-    @include vp-1279 {
-      .is-open & {
+  &.is-active {
+    background-color: $color-default-white;
+
+    .container {
+      @include vp-1279 {
+        grid-template-areas:
+          "h-logo     h-toggle   h-login   "
+          "h-nav      h-nav      h-nav     "
+          "h-contacts h-contacts h-contacts"
+          "h-socials  h-socials  h-socials ";
+        padding-bottom: 80px;
+      }
+
+      @include vp-767 {
+        grid-template-areas:
+          "h-logo     h-toggle  "
+          "h-nav      h-nav     "
+          "h-login    h-login   "
+          "h-contacts h-contacts"
+          "h-socials  h-socials ";
+        padding: 26px 25px;
+      }
+    }
+
+    .header__logo {
+      color: $color-midnight-dark;
+    }
+
+    .header__toggle {
+      @include vp-767 {
+        margin-top: -8px;
+      }
+    }
+
+    .header__navigation {
+      @include vp-1279 {
+        display: block;
+        margin-top: 88px;
+        padding: 0 58px;
+      }
+
+      @include vp-767 {
+        margin-top: 72px;
+        padding: 0;
+      }
+    }
+
+    .header__contacts {
+      @include vp-1279 {
+        display: block;
+        margin-top: 136px;
+        padding: 0 58px;
+      }
+
+      @include vp-767 {
+        margin-top: 51px;
+        padding: 0;
+      }
+    }
+
+    .header__login {
+      @include vp-767 {
+        display: block;
+        margin-top: 54px;
+      }
+    }
+
+    .header__socials {
+      @include vp-1279 {
         display: block;
         margin-top: 122px;
         padding: 0 64px;
       }
-    }
 
-    @include vp-767 {
-      .is-open & {
+      @include vp-767 {
         margin-top: 30px;
         padding: 0;
       }
